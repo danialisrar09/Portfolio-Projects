@@ -12,7 +12,7 @@ async function getsongs(){
     for (let index = 0; index < as.length; index++) {
         const element = as[index];  
         if(element.href.endsWith(".mp3")){
-            console.log(element.href);
+            // console.log(element.href);
             songs.push(element.href.split("-%20")[1])
             
         }
@@ -30,7 +30,7 @@ async function main() {
 
     // Get the list of all the songs
     let songs = await getsongs()
-    console.log(songs);
+    // console.log(songs);
     
     // Show all the songs in the playlists
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
@@ -43,7 +43,7 @@ async function main() {
                             </div>
                             <div class="playnow">
                                 <!-- <span>Play now</span> -->
-                                <img class="" src="play.svg" alt="" srcset="">
+                                <img class="" src="icons/play.svg" alt="" srcset="">
                             </div>
                          </li>`
     }
