@@ -1,5 +1,20 @@
 let currentSong = new Audio();
 
+function secondsToMinutesSecond(second) {
+    if (isNaN(second) ||  second < 0 ) {
+        return  "Invalid input";
+
+    }
+
+    const minutes = Math.floor( second / 60 );
+    const remainingSeconds = Math.floor(  second % 60 );
+
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+
+    return `${formattedMinutes}:${formattedSeconds}`
+
+}
 async function getsongs(){
     let a = await fetch("http://127.0.0.1:3000/songs/");
     let response = await a.text();
@@ -20,16 +35,23 @@ async function getsongs(){
     return songs
 }
 
-const playMusic = (track)=>{
+const playMusic = (track, pause=false)=>{
     // let audio = new Audio("/songs/" + track);
     currentSong.src = "/songs/" + track;
-    currentSong.play();
+    if(!pause){
+        currentSong.play();
+        play.src = "icons/pause.svg"
+
+    }
+    document.querySelector(".songInfo").innerHTML = decodeURI(track)
+    document.querySelector(".songTime").innerHTML = "00:00 / 00:00"
 }
 
 async function main() {
 
     // Get the list of all the songs
     let songs = await getsongs()
+    playMusic(songs[0], true)
     // console.log(songs);
     
     // Show all the songs in the playlists
@@ -56,7 +78,37 @@ async function main() {
         })
         
     });
+
+    //Attach a eventlistner to play, next and previous buttons
+    play.addEventListener("click", ()=>{
+        if(currentSong.paused){
+            currentSong.play()
+            play.src = "icons/pause.svg"
+        }
+        else{
+            currentSong.pause()
+            play.src = "icons/play.svg"
+        }
+    })
+
+    //EventListner for timeUpdate
+    currentSong.addEventListener("timeupdate", ()=>{
+        console.log(currentSong.currentTime, currentSong.duration );
+        document.querySelector(".songTime").innerHTML == `${secondsToMinutesSecond(currentSong.currentTime)}:${secondsToMinutesSecond(currentSong.duration)}` 
+        document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100  +  "%";
+
+    })  
+
+    //Add an event listner to the seekbar
+    document.querySelector(".seekbar").addEventListener("click", e=>{
+        document.querySelector(".circle").style.left = (e.offsetX / e.target.getBoundingClientRect().width) * 100  +  "%";       
+    })
     
+
+    //Add an eventlistner to the hamburger
+    document.querySelector(".hamburger").addEventListener("click", ()=>{
+        document.querySelector(".left-section").style.left = "0" ;
+    })
 }
 
 main()

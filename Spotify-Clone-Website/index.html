@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container flex bg-black">
-        <div class="left-section bg-black">
+        <div class="left-section">
             
             <div class="home bg-grey rounded m-1 p-1">
                 <div class="logo flex justify"><img class="invert" src="icons/logo.svg" alt=""></div>
@@ -84,16 +84,19 @@
         <div class="right-section rounded bg-grey">
             <div class="header rounded bg-grey-2">
                 <div class="nav">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
-                            stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
-                            stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <div class="hamburgerContainer">
+                        <img class=" hamburger invert" src="icons/hamburger.svg" alt="" srcset="">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="buttons">
                     <button class="signupbtn f-16">Sign up</button>
@@ -218,16 +221,19 @@
             <div class="seekbar">
                 <div class="circle"></div>
             </div>
-            <div class="songInfo">
-                
-            </div>
-            <div class="songbuttons justify">
-                <img id="previous" src="icons/prevsong.svg" alt="" srcset="">
-                <img id="play" src="icons/play.svg" alt="" srcset="">
-                <img id="next" src="icons/nextsong.svg" alt="" srcset="">
-            </div>
-            <div class="songTime">
-                
+            <div class="aboveBar">
+
+                <div class="songInfo">
+                    
+                </div>
+                <div class="songbuttons justify">
+                    <img id="previous" src="icons/prevsong.svg" alt="" srcset="">
+                    <img id="play" src="icons/play.svg" alt="" srcset="">
+                    <img id="next" src="icons/nextsong.svg" alt="" srcset="">
+                </div>
+                <div class="songTime">
+                    
+                </div>
             </div>
 
         </div>

@@ -200,9 +200,19 @@ body {
 
 }
 
+.aboveBar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 23px 0px 13px;
+}
+
 .songbuttons{
     display: flex;
     gap: 16px;
+}
+
+.songbuttons img{
+    cursor: pointer;
 }
 
 .seekbar{
@@ -213,6 +223,7 @@ body {
     background-color: white;
     border-radius: 10px;
     left: 40px;
+    cursor: pointer;
 }
 
 .circle{
@@ -225,6 +236,7 @@ body {
     left: 0%;
     transition: left 1s;
 }
+
 
 
 /* LIBRARY/SONGLIST */
@@ -265,4 +277,51 @@ body {
     right: 9px;
     top: 17px;
 }
+
+.hamburger{
+    display: hidden; 
+    /* cursor: pointer; */
+}
+
+.hamburgerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+
+
+/* RESPONSIVENESS */
+@media (max-width: 1400px) {
+    .left-section{
+        background-color: black;
+        position: absolute;
+        left: -100%;
+        transition: all 3ms;
+        z-index: 1;
+        width: 433px;
+        height: 91vh;
+    }
+
+    .library{
+        min-height: 73.7vh;
+
+    }
+
+    .right-section {
+        width: 100vw;
+    }
+
+    .playbar{
+        width: 95vw;
+    }
+
+    .hamburger{
+        display: block;
+    }
+    
+}
+
+
 
