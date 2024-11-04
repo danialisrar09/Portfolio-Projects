@@ -107,7 +107,12 @@ async function main() {
 
     //Add an eventlistner to the hamburger
     document.querySelector(".hamburger").addEventListener("click", ()=>{
-        document.querySelector(".left-section").style.left = "0" ;
+        document.querySelector(".left-section").style.left = "0%" ;
+    })
+    
+    //Add an eventlistner to the cross
+    document.querySelector(".cross").addEventListener("click", ()=>{
+        document.querySelector(".left-section").style.left = "-100%" ;
     })
 }
 

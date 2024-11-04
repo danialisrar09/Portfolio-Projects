@@ -11,15 +11,21 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+
+/* MAIN CONTAINER */
 .container{
     position: relative;
 }
 
+/* LEFT SECTION OF PAGE */
 .left-section {
     width: 25vw;
     padding: 5px;
 }
 
+.cross{
+    display: hidden;
+}
 
 
 .home ul li {
@@ -52,6 +58,7 @@ body {
     /* overflow-y: scroll; */
 }
 
+/* LEFT SECTION FOOTER */
 .footer{
     display: grid;
     grid-template-rows: 20px 20px;
@@ -61,7 +68,7 @@ body {
     gap: 11px;
     position: absolute;
     bottom: 0;
-    padding: 20px 0px;
+    padding: 45px 0px;
 
 }
 
@@ -83,6 +90,7 @@ body {
 }
 
 
+/* RIGHT HEADER */
 .header{
     display: flex;
     justify-content: space-between;
@@ -137,15 +145,18 @@ body {
     padding: 10px 0px;
 }
 
+
 .cardContainer{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     margin: 20px;
     max-height: 64vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
+
+/* SONG CARD */
 .card{
     position:relative;
     width: 200px;
@@ -194,9 +205,11 @@ body {
     position: fixed;
     bottom: 0;
     width: 97%;
+    /* width: calc(100vw - 60px); */
     padding: 30px;
     outline: none;
     border: none;
+    background-color: black;
 
 }
 
@@ -219,7 +232,7 @@ body {
     position: absolute;
     top: 67px;
     height: 2px;
-    width: 95%;
+    width: 96.5%;
     background-color: white;
     border-radius: 10px;
     left: 40px;
@@ -242,7 +255,7 @@ body {
 /* LIBRARY/SONGLIST */
 .songlist{
     overflow-y: scroll;
-    height: 58vh;
+    height: 55vh;
 }
 .songlist ul{
     padding: 0px 0px;
@@ -278,6 +291,8 @@ body {
     top: 17px;
 }
 
+
+/* HAMBURGER */
 .hamburger{
     display: hidden; 
     /* cursor: pointer; */
@@ -300,13 +315,29 @@ body {
         left: -100%;
         transition: all 3ms;
         z-index: 1;
-        width: 433px;
-        height: 91vh;
+        width: 419px;
+        height: 90vh;
+    }
+
+    .left-section .cross{
+        position: absolute;
+        right: 23px;
+        top: 25px;
+        width: 30px;
+        display: block;
+        cursor: pointer;
     }
 
     .library{
-        min-height: 73.7vh;
+        min-height: 69.7vh;
+    }
 
+    .library .songlist{
+        height: 55vh;
+    }
+
+    .footer{
+        padding: 27px 0px;
     }
 
     .right-section {
@@ -314,7 +345,22 @@ body {
     }
 
     .playbar{
-        width: 95vw;
+        position: absolute;
+        bottom: -73px;
+        /* width: 86vw; */
+        width: calc(100vw - 60px);
+        z-index: 1;
+
+    }
+
+    .seekbar{
+        /* width: 85%; */
+        width: calc(100vw - 60px);
+        left: 33px
+    }
+
+    .aboveBar{
+        padding: 0px;
     }
 
     .hamburger{
