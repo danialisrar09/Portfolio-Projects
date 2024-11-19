@@ -11,6 +11,10 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+:root{
+    --a: 0;
+}
+
 
 /* MAIN CONTAINER */
 .container{
@@ -24,7 +28,7 @@ body {
 }
 
 .cross{
-    display: hidden;
+    display: none;
 }
 
 
@@ -173,6 +177,11 @@ body {
     padding-top: 10px;
 }
 
+.card:hover{
+    --a: 1;
+
+}
+
 .play {
     position: absolute;
     right: 26px;
@@ -186,8 +195,8 @@ body {
     align-items: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    opacity: 1;
-    transition: all 1s ease-out;
+    opacity: var(--a);
+    transition: all 0.5s ease-out;
 }
 
 .play svg {
@@ -313,7 +322,7 @@ body {
         background-color: black;
         position: absolute;
         left: -100%;
-        transition: all 3ms;
+        transition: all 4ms;
         z-index: 1;
         width: 419px;
         height: 90vh;
@@ -342,6 +351,7 @@ body {
 
     .right-section {
         width: 100vw;
+        margin-top: 0;
     }
 
     .playbar{
@@ -364,6 +374,10 @@ body {
     }
 
     .hamburger{
+        display: block;
+    }
+
+    .close{
         display: block;
     }
     
