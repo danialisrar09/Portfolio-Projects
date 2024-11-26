@@ -383,5 +383,18 @@ body {
     
 }
 
+@media (max-width: 500px){
+    .right-section {
+        width: 100vw;
+        margin: 0px 0px 0px 0px;
+        border-radius: 7px;
+        height: 91vh;
+    }
+
+    .seekbar{
+        top: 93px;
+    }
+}
+
 
 
