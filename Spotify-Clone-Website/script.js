@@ -37,12 +37,15 @@ async function getsongs(folder) {
 
     // Show all the songs in the playlists
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
+    // console.log(songUL);
     songUL.innerHTML = ""
     for (const song of songs) {
+        // console.log(song.querySelector(".songname").innerHTML);
+        let trimmed_songname = song.replaceAll("%20", " ")
         songUL.innerHTML = songUL.innerHTML + `<li>
                             <img class="" src="Images/ab67706f00000002472120b92edea982b5feb264.jpeg" alt="" srcset="">
                             <div class="info">
-                                <div class="songname f-16">${song.replaceAll("%20", "")}</div>
+                                <div class="songname f-16">${trimmed_songname.replaceAll(".mp3", "")}</div>
                                 <div class="artistname f-14">Danial</div>
                             </div>
                             <div class="playnow">
@@ -55,7 +58,8 @@ async function getsongs(folder) {
     // Attach an eventlistner to each song
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
-            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+            let song_name = e.querySelector(".info").firstElementChild.innerHTML.trim()
+            playMusic(song_name.replaceAll(".mp3", ""))
         })
 
     });
