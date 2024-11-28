@@ -9,6 +9,7 @@
   "author": "Danial",
   "license": "ISC",
   "dependencies": {
+    "nodemon": "^3.1.7",
     "socket.io": "^4.8.1"
   }
 }
