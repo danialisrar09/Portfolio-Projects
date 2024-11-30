@@ -6,6 +6,7 @@ const user = {};
 io.on('connection', (socket) => {
     //Agar new user join event ayega to ye hoga.
     socket.on('new-user-joined', name =>{
+        console.log("New user", name);
         user[socket.id] = name;
         socket.broadcast.emit('user-joined', name)
     });
