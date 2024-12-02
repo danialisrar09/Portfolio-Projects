@@ -1,4 +1,4 @@
-const socket = io('http://localhost:8000')
+const socket = io('http://localhost:3000');
 
 const form = document.getElementById('send-container');
 const msgInput = document.getElementById('msgInput');
@@ -11,9 +11,9 @@ const append = (message, position)=>{
     messageElement.classList.add('position');
     msgContainer.append(messageElement)
 }
-const Name = prompt("Enter your name: ");
-socket.emit('new-user-joined', Name);
+const naam = prompt("Enter your name: ");
+socket.emit('new-user-joined', naam);
 
 socket.on('User-joined', data =>{
-    append(`${Name} joined the chat`, `right`)
+    append(`${naam} joined the chat`, `right`)
 })
