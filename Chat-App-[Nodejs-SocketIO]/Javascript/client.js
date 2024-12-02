@@ -6,3 +6,7 @@ const msgContainer = document.querySelector(".container");
 
 const Name = prompt("Enter your name: ");
 socket.emit('new-user-joined', Name);
+
+// socket.on('User-joined', data =>{
+
+// })

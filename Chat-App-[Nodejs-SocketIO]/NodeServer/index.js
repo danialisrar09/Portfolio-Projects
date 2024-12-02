@@ -3,7 +3,7 @@ const io = require('socket.io')(8000)
 
 const user = {};
 
-io.on('connection', (socket) => {
+io.on('connection', socket => {
     //Agar new user join event ayega to ye hoga.
     socket.on('new-user-joined', name =>{
         console.log("New user", name);
