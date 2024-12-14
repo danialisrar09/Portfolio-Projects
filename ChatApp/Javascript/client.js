@@ -11,9 +11,9 @@ const append = (message, position)=>{
     messageElement.classList.add('position');
     msgContainer.append(messageElement)
 }
-const naam = prompt("Enter your name: ");
-socket.emit('new-user-joined', naam);
+const name = prompt("Enter your name to join: ");
+socket.emit('new-user-joined');
 
-socket.on('User-joined', data =>{
-    append(`${naam} joined the chat`, `right`)
+socket.on('User-joined', name =>{
+    append(`${name} joined the chat`, `right`)
 })
