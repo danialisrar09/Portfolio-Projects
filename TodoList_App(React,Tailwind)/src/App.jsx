@@ -9,9 +9,9 @@ function App() {
   return (
     <>
     <Navbar/>
-      <div className="container mx-auto">
-        <div className="bg-indigo-600">
-          <h1>Your Todo App</h1>
+      <div className="container mx-auto my-5 p-5 rounded-xl  bg-blue-950">
+        <div className="bg-blue-300 ">
+          <h1 className='font-bold text-xl text-center'>Your Todo App</h1>
         </div>
       </div>
     </>
