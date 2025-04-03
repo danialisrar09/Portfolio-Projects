@@ -1,17 +1,25 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [todo, setTodo] = useState("")
   const [todos, setTodos] = useState([])
 
   const handleEdit = () => {
+    let index = todos.findIndex(item=>{
+      return item.id === id;
+    })
+    let newTodos = todos.filter(item=>{
+      return item.id !== id;
+    });
+    setTodos(newTodos);
 
   };
 
-  const handleDelete = () => {
-
+  const handleDelete = (e, id) => {
+    let id = e.target.name;
+    console.log(`${id}`)
   };
 
   const handleAdd = () => {
@@ -26,7 +34,12 @@ function App() {
 
   const handleCheckbox = (e) => {
     let id = e.target.name;
-    todos.filter(id)
+    let index = todos.findIndex(item=>{
+      return item.id === id;
+    })
+    let newTodos = [...todos];
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    setTodos(newTodos);
   }
   
   return (
@@ -40,19 +53,19 @@ function App() {
           <button onClick={handleAdd} className=' text-white text-sm font-bold bg-blue-600 hover:bg-blue-950 px-3 py-1 mx-6 rounded-md'>Add</button>
         </div>
 
-        <h2 className=' font-bold text-lg text-center'>Your Todo App</h2>
+        <h2 className=' font-bold text-lg'>Your Todo App</h2>
 
         <div className="todos">
           {todos.map(item => {
 
             return (
 
-              <div key={todo} className="todo flex w-1/2 my-3 justify-between ">
-                <input onChange={handleCheckbox} type="checkbox" value={todo.isCompleted} name={todo.id} id='' />
+              <div key={item.id} className="todo flex w-1/2 my-3 justify-between ">
+                <input onChange={handleCheckbox} type="checkbox" value={item.isCompleted} name={item.id} id="" />
                 <div className={item.isCompleted ? "line-through" : ""}>{item.todo}</div>
                 <div className="buttons ">
                   <button onClick={handleEdit} className='text-white text-sm font-bold bg-blue-600 hover:bg-blue-950 px-3 py-1 mx-1 rounded-md'>Edit</button>
-                  <button onClick={handleDelete} className='text-white text-sm font-bold bg-blue-600 hover:bg-blue-950 px-3 py-1 mx-1 rounded-md'>Delete</button>
+                  <button onClick={()=>{handleDelete(item.id)}} className='text-white text-sm font-bold bg-blue-600 hover:bg-blue-950 px-3 py-1 mx-1 rounded-md'>Delete</button>
                 </div>
               </div>
 
