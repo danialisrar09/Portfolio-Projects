@@ -17,7 +17,6 @@ const App = () => {
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px0-[9vw]'>
 
       <Navbar />
-      <Hero/>
       <Routes>
             <Route  path='/' element={<Home/>} />
             <Route  path='/collection' element={<Collection/>} />
