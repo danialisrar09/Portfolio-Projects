@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 import { Link,NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import { setShowSearch } from '../context/ShopContext'
+// import { setShowSearch } from '../context/ShopContext'
 
 
 const Navbar = () => {

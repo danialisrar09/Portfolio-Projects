@@ -18,11 +18,15 @@ const ShopContextProvider = (props) => {
     }
 
     return (
-        <ShopContext.Provider value={value}>
+        <ShopContext.Provider value={{value}}>
             {/* Children components will be rendered here */}
             {props.children}
         </ShopContext.Provider>
     );
 }
+
+// export const useShopContext = () => {
+//     return useContext(ShopContext);
+// };
 
 export default ShopContextProvider;
