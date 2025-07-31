@@ -8,7 +8,7 @@ const Collection = () => {
 
   const { products } = useContext(ShopContext);
   const [ showFilters, setShowFilters ] = useState(true);
-  const [ filteredProducts, setFilteredProducts ] = useState([]);
+  const [ filteredProducts, setFilteredProducts ] = useState(products || []);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState('relevant');
